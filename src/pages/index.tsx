@@ -6,6 +6,7 @@ import Typical from 'react-typical'
 import Button from '@components/Button'
 import Editor from '@components/Editor'
 import Navbar from '@/components/Navbar'
+import ArticleTabs from '@/components/ArticleTabs'
 import Modal from 'react-modal'
 
 Modal.setAppElement('#main')
@@ -76,19 +77,19 @@ const Home: NextPage = () => {
 		setIsOpen(false)
 		e.stopPropagation()
 	}
-	const getTitleText = () => {
-		if (toggle == true) {
-			let starterText: string = 'Dear diary, \n'
-			return starterText
-		} else {
-			let starterText: string = 'Dear me, \n'
-			return starterText
-		}
-	}
+	// const getTitleText = () => {
+	// 	if (toggle == true) {
+	// 		let starterText: string = 'Dear diary, \n'
+	// 		return starterText
+	// 	} else {
+	// 		let starterText: string = 'Dear me, \n'
+	// 		return starterText
+	// 	}
+	// }
 	return (
 		<Container>
 			<Head>
-				<title>{getTitleText()}</title>
+				<title>dKnowledge / Home</title>
 				<meta name="description" content="a diary app for personal use" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
@@ -115,7 +116,7 @@ const Home: NextPage = () => {
 				<Modal isOpen={modalIsOpen} onRequestClose={e => e.stopPropagation()} contentLabel="Modal">
 					<h1>{new Date().toJSON().slice(0, 10)}</h1>
 					<ModalEditor>
-						<Editor starterText={`# ${getTitleText()} <br>`} />
+						<Editor starterText={`# My First Post`} />
 					</ModalEditor>
 					<ButtonsWrapper>
 						<ModalButton onClick={closeModal}>
@@ -133,6 +134,8 @@ const Home: NextPage = () => {
 						and this is dKnowledge—a decentralised knowledge monetisation app.
 					</Intro>
 				</IntroWrapper>
+
+				<ArticleTabs />
 			</Main>
 		</Container>
 	)
