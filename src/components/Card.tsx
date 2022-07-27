@@ -2,101 +2,78 @@ import { FC, MouseEvent } from 'react'
 import { useRouter } from 'next/router'
 // import Icon from '@/common/Icons'
 import styled from 'styled-components'
-import { Row, Column } from 'styles/Utils'
 
-const Wrapper = styled(Column)`
-	align-self: center;
-	flex-shrink: 1;
-	background: ${props => props.theme.colors.white};
-	box-shadow: 0px 8px 24px rgba(163, 177, 191, 0.35);
+const Wrapper = styled.div`
+	margin: 10px;
+	background-color: #fff;
 	border-radius: 10px;
-	align-items: center;
-	width: 165px;
-	height: 215px;
-	cursor: pointer;
-	padding: 20px 12px 0 12px;
-	box-sizing: border-box;
-	transition: transform 0.4s;
-	@media ${props => props.theme.device.md} {
-		&:hover {
-			transform: scale(1.1);
-		}
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	width: 300px;
+`
+
+const CardImage = styled.div`
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+`
+
+const CardBody = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 20px;
+	min-height: 250px;
+	p {
+		font-size: 13px;
+		margin: 0 0 40px;
 	}
 `
 
-const Logo = styled.img`
-	width: ${props => (props.width ? props.width : 45)}px;
-	height: ${props => (props.height ? props.height : 45)}px;
-	border-radius: 10px;
-	margin-bottom: 6px;
-`
-
-const Title = styled.div`
-	color: ${props => props.theme.colors.fontColor};
-	font-weight: 600;
-	font-size: 20px;
-	height: 40px;
-	margin-bottom: 6px;
-	text-align: center;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-`
-
-const Desc = styled.div`
+const Tag = styled.span`
+	background: #cccccc;
+	border-radius: 50px;
 	font-size: 12px;
-	height: 34px;
-	line-height: 17px;
-	color: ${props => props.theme.colors.fontColor};
-	text-align: center;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 2;
-	margin-bottom: 9px;
+	margin: 0;
+	color: #fff;
+	padding: 2px 10px;
+	text-transform: uppercase;
+	cursor: pointer;
 `
 
-const DividingLine = styled.div`
-	background: ${props => props.theme.colors.itemLineColor};
-	height: 1px;
-	width: 100%;
+const TagTeal = styled.span`
+	background-color: #47bcd4;
 `
 
-const Actions = styled(Row)`
-	flex: 1;
-	padding: 0 4px;
-	width: 100%;
-	align-items: center;
-	justify-content: space-between;
+const User = styled.div`
+	display: flex;
+	margin-top: auto;
+	img {
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		margin-right: 10px;
+	}
 `
 
-interface IconWrapperProps {
-	right?: boolean
-}
-
-const IconWrapper = styled(Row)<IconWrapperProps>`
-	-webkit-tap-highlight-color: transparent;
-	-moz-tap-highlight-color: transparent;
-	height: 100%;
-	width: 48px;
-	align-items: center;
-	flex-direction: ${props => (props.right ? 'row-reverse' : 'row')};
+const UserInfo = styled.div`
+	h5 {
+		margin: 0;
+	}
+	small {
+		color: #545d7a;
+	}
 `
 
-export interface ItemsProps {
+export interface Props {
 	name: string
-	desc: string
-	home: string
-	is_docschina?: boolean
-	logo: string
-	contribute?: string
-	logoWidth?: number
-	logoHeight?: number
+	time: string
+	avatar: string
+	cover: string
 }
 
-const Card: FC<ItemsProps> = ({ name, desc, home, logo, contribute, logoWidth, logoHeight }) => {
+const Card: FC<Props> = (props: Props) => {
 	const router = useRouter()
 	const handleClick = (e: MouseEvent<HTMLDivElement>, url: string) => {
 		e.stopPropagation()
@@ -107,21 +84,24 @@ const Card: FC<ItemsProps> = ({ name, desc, home, logo, contribute, logoWidth, l
 		}
 	}
 	return (
-		<Wrapper onClick={(e: MouseEvent<HTMLDivElement>) => handleClick(e, home)}>
-			<Logo width={logoWidth} height={logoHeight} src={logo} />
-			<Title>{name}</Title>
-			<Desc title={desc}>{desc}</Desc>
-			<DividingLine />
-			<Actions>
-				{/* <IconWrapper onClick={(e: MouseEvent<HTMLDivElement>) => handleClick(e, home)}>
-					<Icon icon="item-home-btn" size={24} />
-				</IconWrapper>
-				{contribute && (
-					<IconWrapper right onClick={(e: MouseEvent<HTMLDivElement>) => handleClick(e, contribute)}>
-						<Icon icon="item-github-btn" size={24} />
-					</IconWrapper>
-				)} */}
-			</Actions>
+		<Wrapper>
+			<CardImage>
+				<img src={props.cover} alt="rover" />
+			</CardImage>
+			<CardBody>
+				<Tag>
+					<TagTeal>Technology</TagTeal>
+				</Tag>
+				<h4>Why is the Tesla Cybertruck designed the way it is?</h4>
+				<p>An exploration into the truck's polarising design</p>
+				<User>
+					<img src={props.avatar} alt="user" />
+					<UserInfo>
+						<h5>{props.name}</h5>
+						<small>{props.time}</small>
+					</UserInfo>
+				</User>
+			</CardBody>
 		</Wrapper>
 	)
 }
