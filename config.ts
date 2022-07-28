@@ -11,7 +11,7 @@ export const nav = [
 	},
 	{
 		label: 'contact',
-		value: '/contact',
+		value: 'mailto:knowscount@gmail.com',
 	},
 ]
 
