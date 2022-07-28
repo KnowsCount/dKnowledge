@@ -96,7 +96,7 @@ const IconWrapper = styled(Row)<IconWrapperProps>`
 `
 
 export interface Props {
-	name: string
+	title: string
 	desc: string
 	home: string
 	is_docschina?: boolean
@@ -106,7 +106,7 @@ export interface Props {
 	logoHeight?: number
 }
 
-const Card = ({ name, desc, home, logo, contribute, logoWidth, logoHeight }: Props) => {
+const Card = ({ title, desc, home, logo, contribute, logoWidth, logoHeight }: Props) => {
 	const router = useRouter()
 	const handleClick = (e: MouseEvent<HTMLDivElement>, url: string) => {
 		e.stopPropagation()
@@ -119,7 +119,7 @@ const Card = ({ name, desc, home, logo, contribute, logoWidth, logoHeight }: Pro
 	return (
 		<Wrapper onClick={(e: MouseEvent<HTMLDivElement>) => handleClick(e, home)}>
 			<Logo width={logoWidth} height={logoHeight} src={logo} />
-			<Title>{name}</Title>
+			<Title>{title}</Title>
 			<Desc title={desc}>{desc}</Desc>
 			<DividingLine />
 			{/* <Actions>

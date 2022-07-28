@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import { tags } from 'config'
+import { card } from 'config'
 import Card from './Card'
 // import parse from 'html-react-parser'
 
@@ -13,9 +14,12 @@ const Container = styled.div`
 	margin-top: 5rem;
 `
 
+const TabPanelContainer = styled.div``
+
 const CardContainer = styled.div`
 	margin-top: 2rem;
 	display: flex;
+	gap: 30px;
 	flex-direction: row;
 	justify-content: center;
 `
@@ -33,46 +37,23 @@ const ArticleTabs = () => {
 				</TabList>
 
 				{tags?.map(tags => (
-					<CardContainer key={tags.title}>
+					<TabPanelContainer key={tags.title}>
 						<TabPanel>
-							{/* <Card
-								title="good shit"
-								desc="good shit"
-								tag="good shit"
-								username="good shit"
-								userIntro="good shit"
-								avatar="https://avatars.githubusercontent.com/u/912236?s=120&v=4"
-								// cover="https://avatars.githubusercontent.com/u/912236?s=120&v=4"
-							/> */}
-							<Card
-								name="shit"
-								desc="shit"
-								home="shit"
-								logo="shit"
-								contribute="shit"
-								logoWidth={3}
-								logoHeight={3}
-							></Card>
-							<Card
-								name="shit"
-								desc="shit"
-								home="shit"
-								logo="shit"
-								contribute="shit"
-								logoWidth={3}
-								logoHeight={3}
-							></Card>
-							<Card
-								name="shit"
-								desc="shit"
-								home="shit"
-								logo="shit"
-								contribute="shit"
-								logoWidth={3}
-								logoHeight={3}
-							></Card>
+							<CardContainer>
+								{card?.map(card => (
+									<Card
+										key={tags.title + card.desc}
+										title={tags.title}
+										desc={card.desc}
+										home={card.home}
+										logo={card.logo}
+										logoWidth={90}
+										logoHeight={90}
+									></Card>
+								))}
+							</CardContainer>
 						</TabPanel>
-					</CardContainer>
+					</TabPanelContainer>
 				))}
 			</Tabs>
 		</Container>
