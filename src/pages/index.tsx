@@ -6,6 +6,7 @@ import Typical from 'react-typical'
 import Button from '@components/Button'
 import Editor from '@components/Editor'
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 import ArticleTabs from '@/components/ArticleTabs'
 import Modal from 'react-modal'
 
@@ -13,6 +14,10 @@ Modal.setAppElement('#main')
 
 const Container = styled.div`
 	/* padding: 0 2rem; */
+`
+
+const NavbarWrapper = styled.div`
+	z-index: 999;
 `
 
 const Main = styled.main`
@@ -90,20 +95,13 @@ const Home: NextPage = () => {
 		<Container>
 			<Head>
 				<title>dKnowledge / Home</title>
-				<meta name="description" content="a diary app for personal use" />
+				<meta name="description" content="thoughts worth sharing, and this is dKnowledge—a decentralised knowledge monetisation app." />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
 			<Navbar />
 
 			<Main id="main">
-				{/* <Title onClick={() => setToggle(!toggle)}>
-					{toggle ? (
-						<Typical steps={['Knowledge for the People,']} loop={1} />
-					) : (
-						<Typical steps={['From the People']} loop={1} />
-					)}
-				</Title> */}
 				<Title>
 					<Typical steps={['Knowledge for People,', 4000, 'Knowledge from People.', 3000]} loop={1}></Typical>
 				</Title>
@@ -137,6 +135,9 @@ const Home: NextPage = () => {
 
 				<ArticleTabs />
 			</Main>
+
+			<Footer />
+
 		</Container>
 	)
 }
