@@ -13,6 +13,12 @@ const Container = styled.div`
 	margin-top: 5rem;
 `
 
+const CardContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+`
+
 const ArticleTabs = () => {
 	return (
 		<Container>
@@ -26,9 +32,19 @@ const ArticleTabs = () => {
 				</TabList>
 
 				{tags?.map(tags => (
-					<TabPanel key={tags.title}>
-						{/* <Card key={article.name + article.desc} {...article} /> */}
-					</TabPanel>
+					<CardContainer key={tags.title}>
+						<TabPanel>
+							{/* <Card
+								title="good shit"
+								desc="good shit"
+								tag="good shit"
+								username="good shit"
+								userIntro="good shit"
+								avatar="https://avatars.githubusercontent.com/u/912236?s=120&v=4"
+								// cover="https://avatars.githubusercontent.com/u/912236?s=120&v=4"
+							/> */}
+						</TabPanel>
+					</CardContainer>
 				))}
 			</Tabs>
 		</Container>

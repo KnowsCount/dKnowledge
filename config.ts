@@ -16,30 +16,30 @@ export const nav = [
 export const tags = [
 	{
 		title: 'web dev',
-		content: '<img src="https://i.imgur.com/kufwZ19.jpeg">',
+		value: '/tags/webdev',
 	},
 	{
 		title: 'web3',
-		content: '<strong>asd</strong>',
+		value: '/tags/web3',
 	},
 	{
 		title: 'ai',
-		content: '/contact',
+		value: '/tags/ai',
 	},
 	{
 		title: 'efficiency',
-		content: '/contact',
+		value: '/tags/efficiency',
 	},
 	{
 		title: 'arts',
-		content: '/contact',
+		value: '/tags/arts',
 	},
 	{
 		title: 'literature',
-		content: '/contact',
+		value: '/tags/literature',
 	},
 	{
 		title: 'philosophy',
-		content: '/contact',
+		value: '/tags/philosophy',
 	},
 ]
