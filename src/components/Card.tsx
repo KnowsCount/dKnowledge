@@ -17,7 +17,8 @@ const Wrapper = styled(Column)`
 	align-self: center;
 	flex-shrink: 1;
 	background: ${props => props.theme.colors.white};
-	box-shadow: 0px 8px 24px rgba(163, 177, 191, 0.35);
+	/* box-shadow: 0px 8px 24px rgba(163, 177, 191, 0.35); */
+	border: 1px solid rgba(163, 177, 191, 0.35);
 	border-radius: 10px;
 	align-items: center;
 	width: 165px;
@@ -105,7 +106,7 @@ export interface Props {
 	logoHeight?: number
 }
 
-const Card: FC<Props> = (name, desc, home, logo, contribute, logoWidth, logoHeight) => {
+const Card = ({ name, desc, home, logo, contribute, logoWidth, logoHeight }: Props) => {
 	const router = useRouter()
 	const handleClick = (e: MouseEvent<HTMLDivElement>, url: string) => {
 		e.stopPropagation()

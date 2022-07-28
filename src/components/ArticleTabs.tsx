@@ -14,6 +14,7 @@ const Container = styled.div`
 `
 
 const CardContainer = styled.div`
+	margin-top: 2rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -43,6 +44,33 @@ const ArticleTabs = () => {
 								avatar="https://avatars.githubusercontent.com/u/912236?s=120&v=4"
 								// cover="https://avatars.githubusercontent.com/u/912236?s=120&v=4"
 							/> */}
+							<Card
+								name="shit"
+								desc="shit"
+								home="shit"
+								logo="shit"
+								contribute="shit"
+								logoWidth={3}
+								logoHeight={3}
+							></Card>
+							<Card
+								name="shit"
+								desc="shit"
+								home="shit"
+								logo="shit"
+								contribute="shit"
+								logoWidth={3}
+								logoHeight={3}
+							></Card>
+							<Card
+								name="shit"
+								desc="shit"
+								home="shit"
+								logo="shit"
+								contribute="shit"
+								logoWidth={3}
+								logoHeight={3}
+							></Card>
 						</TabPanel>
 					</CardContainer>
 				))}
