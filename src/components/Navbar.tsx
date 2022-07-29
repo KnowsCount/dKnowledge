@@ -4,6 +4,11 @@ import { NextPage } from 'next'
 import { nav } from 'config'
 import ConnectWallet from './ConnectWallet'
 
+const Container = styled.div`
+	position: sticky;
+	top: 0;
+`
+
 const NavbarArea = styled.div`
 	height: 60px;
 	/* background-color: whitesmoke; */
@@ -20,6 +25,7 @@ const Logo = styled.section`
 	margin-left: 2rem;
 	font-size: 30px;
 	font-weight: bolder;
+	color: black;
 `
 
 const LinkArea = styled.section`
@@ -43,19 +49,23 @@ const ConnectWalletWrapper = styled.div`
 
 const Navbar: NextPage = () => {
 	return (
-		<NavbarArea>
-			<Logo>dKnowledge</Logo>
-			<LinkArea>
-				{nav?.map(nav => (
-					<Link key={nav?.label} href={nav?.value}>
-						<a>{nav.label}</a>
-					</Link>
-				))}
-			</LinkArea>
-			<ConnectWalletWrapper>
-				<ConnectWallet />
-			</ConnectWalletWrapper>
-		</NavbarArea>
+		<Container>
+			<NavbarArea>
+				<Logo>
+					<Link href="/">dKnowledge</Link>
+				</Logo>
+				<LinkArea>
+					{nav?.map(nav => (
+						<Link key={nav?.label} href={nav?.value}>
+							<a>{nav.label}</a>
+						</Link>
+					))}
+				</LinkArea>
+				<ConnectWalletWrapper>
+					<ConnectWallet />
+				</ConnectWalletWrapper>
+			</NavbarArea>
+		</Container>
 	)
 }
 
