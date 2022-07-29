@@ -3,7 +3,7 @@ import { title } from "process"
 export const nav = [
 	{
 		label: 'tags',
-		value: '/',
+		value: '/tags',
 	},
 	{
 		label: 'about',

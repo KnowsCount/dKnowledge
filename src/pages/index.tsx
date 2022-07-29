@@ -103,7 +103,7 @@ const Home: NextPage = () => {
 
 			<Main id="main">
 				<Title>
-					<Typical steps={['Knowledge for People,', 4000, 'Knowledge from People.', 3000]} loop={1}></Typical>
+					<Typical steps={['Knowledge of the people,', 4000, 'Knowledge by the people,', 4000, 'Knowledge for the people.', 3000]} loop={1}></Typical>
 				</Title>
 				<ButtonWrapper onClick={openModal}>
 					<Button frontColour="hsl(345deg 100% 47%)" backColour="hsl(340deg 100% 32%)" text="Start" />
@@ -135,7 +135,7 @@ const Home: NextPage = () => {
 
 				<ArticleTabs />
 			</Main>
-
+			
 			<Footer />
 
 		</Container>

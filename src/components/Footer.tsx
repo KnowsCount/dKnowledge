@@ -92,27 +92,27 @@ const Container = ({ children }: Props) => {
 
 const Footer = () => {
 	return (
-	  <FooterContainer>
-		<Container>
-		  <FooterBody>
-			<FooterTitle>
-			  Join us. &nbsp; Like right now.
-			</FooterTitle>
-			<ButtonContainer>
-			  <Button
-				href="https://nextjs.org/docs/basic-features/pages"
-			  >
-				Mobile App
-			  </Button>
-			  <Link
-				href={`https://github.com/vercel/next.js/tree/canary/examples/`}
-			  >
-				View on GitHub
-			  </Link>
-			</ButtonContainer>
-		  </FooterBody>
-		</Container>
-	  </FooterContainer>
+		<FooterContainer>
+			<Container>
+			<FooterBody>
+				<FooterTitle>
+				Join us. &nbsp; Like right now.
+				</FooterTitle>
+				<ButtonContainer>
+				<Button
+					href="/mobile"
+				>
+					Mobile App
+				</Button>
+				<Link
+					href={`https://github.com/KnowsCount/dKnowledge`}
+				>
+					View on GitHub
+				</Link>
+				</ButtonContainer>
+			</FooterBody>
+			</Container>
+		</FooterContainer>
 	)
   }
 

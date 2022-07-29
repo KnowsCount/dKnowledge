@@ -25,6 +25,7 @@ const Logo = styled.section`
 	margin-left: 2rem;
 	font-size: 30px;
 	font-weight: bolder;
+	color: black;
 `
 
 const LinkArea = styled.section`
@@ -50,7 +51,9 @@ const Navbar: NextPage = () => {
 	return (
 		<Container>
 			<NavbarArea>
-				<Logo>dKnowledge</Logo>
+				<Logo>
+					<Link href="/">dKnowledge</Link>
+				</Logo>
 				<LinkArea>
 					{nav?.map(nav => (
 						<Link key={nav?.label} href={nav?.value}>
