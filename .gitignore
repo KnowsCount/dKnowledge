@@ -7,6 +7,7 @@
 
 # testing
 /coverage
+coverage.json
 
 # next.js
 /.next/
@@ -30,3 +31,11 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# hardhat files
+cache
+artifacts
+
+# typechain
+typechain
+typechain-types
