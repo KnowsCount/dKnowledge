@@ -6,7 +6,15 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"web3:test": "npx hardhat test",
+		"web3:compile": "npx hardhat compile",
+		"web3:lint": "npx solhint web3/contracts/**/*.sol",
+		"web3:lint:fix": "npx solhint web3/contracts/**/*.sol -- fix",
+		"web3:deploy:testnet": "npx hardhat run web3/scripts/deploy.ts --network testnet",
+		"web3:deploy:mainnet": "npx hardhat run web3/scripts/deploy.ts --network mainnet",
+		"web3:verify:testnet": "npx hardhat verify --network testnet",
+		"web3:verify:mainnet": "npx hardhat verify --network mainnet"
 	},
 	"dependencies": {
 		"@heroicons/react": "^1.0.6",
